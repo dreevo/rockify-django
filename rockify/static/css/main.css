@@ -129,3 +129,19 @@ h6 {
   display: inline-block;
   padding: 5px;
 }
+
+.hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  h4 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  h4 {
+    font-size: 1rem;
+  }
+}
