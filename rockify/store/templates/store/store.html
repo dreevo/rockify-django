@@ -2,35 +2,22 @@
 {% load static %}
 {% block content %}
 <div class="row">
-    <div class="col-lg-4">
-        <div class="box-element product">
-            <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-            <h6><strong>Product</strong></h6>
-            <hr>
-            <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-            <a class="btn btn-warning view-btn" href="#">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
+    {% for product in products %}
+        <div class="col-lg-4">
+            <div class="box-element">
+                <div class="product-img">
+                    <img class="thumbnail" src="{{product.imageURL}}">
+                </div>
+                <div class="product-info">
+                    <h6><strong>{{product.name}}</strong></h6>
+                </div>
+                <div class="product-btns">
+                    <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                    <a class="btn btn-warning view-btn" href="#">View</a>
+                    <h4 style="display: inline-block; float: right"><strong>$ {{product.price|floatformat:2}}</strong></h4>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="box-element product">
-            <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-            <h6><strong>Product</strong></h6>
-            <hr>
-            <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-            <a class="btn btn-warning view-btn" href="#">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-        </div>
-    </div>
-    <div class="col-lg-4">
-        <div class="box-element product">
-            <img class="thumbnail" src="{% static 'images/placeholder.png' %}">
-            <h6><strong>Product</strong></h6>
-            <hr>
-            <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
-            <a class="btn btn-warning view-btn" href="#">View</a>
-            <h4 style="display: inline-block; float: right"><strong>$20</strong></h4>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 {% endblock %}
